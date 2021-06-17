@@ -1,0 +1,72 @@
+body {
+    margin: 0px;
+}
+#overall-container {
+    width: auto;
+    height: auto;
+}
+#title-div {
+    height: 50px;
+    width: 900px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+#title {
+    width: 200px;
+    margin: 0px 0px 0px 350px;
+}
+#library-container {
+    height: 100%;
+    width: 900px;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+#organizer-card{
+    width: 900px;
+    height: 50px;
+    background-color: darkmagenta;
+    display: flex;
+    align-items: center;
+}
+.org-info {
+    height: 49px;
+    width: 300px;
+    background-color: rgb(255, 211, 255);
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    display: flex;
+    align-items: center;
+}
+.info-text {
+    margin-left: 5px;
+}
+.book-card {
+    height: 50px;
+    width: 900px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+}
+.card-info {
+    height: 49px;
+    width: 300px;
+    background-color: rgb(255, 213, 134);
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    display: flex;
+    align-items: center;
+}
+.submit-info {
+    height: 100px;
+    width: 600px;
+    transition: all 1s;
+    background-color: cornsilk;
+}
+.submission-text {
+    width: 150px;
+}
