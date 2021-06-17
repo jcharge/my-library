@@ -50,14 +50,13 @@ function newCard() {
 }
 
 // These are the items that go into subForm()
-let subInfo = document.createElement('div');
+let subInfo = document.querySelector('#submit-form');
 
 let cancelBtn = document.createElement('button');
 cancelBtn.textContent += 'Cancel';
-subInfo.classList.add('submit-info');
 
 cancelBtn.addEventListener('click', (e) => {
-    overallContainer.removeChild(subInfo);
+    removeSubForm();
 });
 
 let titleInfo = document.createElement('textarea');
@@ -86,17 +85,26 @@ submissionBtn.addEventListener('click', (e) => {
     title = titleInfo.textContent
     author = authorInfo.textContent
     newCard();
-    overallContainer.removeChild(subInfo);
+    removeSubForm();
 })
 
 // A function that makes a submission form appear. It has text areas for the user
 // to input the title, author, and whether or not they read the book. It also
 // has a cancel button to remove the form and a submit button to move the info into the library
 function subForm() {
-    overallContainer.appendChild(subInfo);
+    subInfo.classList.add('submit-info')
     subInfo.appendChild(titleInfo);
     subInfo.appendChild(authorInfo);
     subInfo.appendChild(readInfo);
     subInfo.appendChild(submissionBtn);
     subInfo.appendChild(cancelBtn);
+}
+
+function removeSubForm() {
+    subInfo.classList.remove('submit-info');
+    subInfo.removeChild(titleInfo);
+    subInfo.removeChild(authorInfo);
+    subInfo.removeChild(readInfo);
+    subInfo.removeChild(submissionBtn);
+    subInfo.removeChild(cancelBtn);
 }

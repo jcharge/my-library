@@ -61,11 +61,16 @@ body {
     display: flex;
     align-items: center;
 }
+#submit-form {
+    width: 900px;
+    margin: auto;
+}
 .submit-info {
-    height: 100px;
-    width: 600px;
+    height: 80px;
+    width: 900px;
     transition: all 1s;
     background-color: cornsilk;
+    border-right: solid black 1px;
 }
 .submission-text {
     width: 150px;
