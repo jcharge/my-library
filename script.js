@@ -5,8 +5,10 @@ function Book() {
 
 };
 
-function addBookToLibrary(title, author) {
-    myLibrary.push(title, author);
+// a function to add the title, author, and read status of a book
+// to the myLibrary array
+function addBookToLibrary(title, author, read) {
+    myLibrary.push({title, author, read});
 }
 
 let overallContainer = document.querySelector('#overall-container');
@@ -47,6 +49,12 @@ function newCard() {
     infoReadText.textContent += readInfo.textContent;
     bookCard.appendChild(infoRead);
     infoRead.appendChild(infoReadText);
+
+    if (infoReadText.textContent == 'Read') {
+        readStatus = true
+    } else {readStatus = false}
+    
+    addBookToLibrary(infoTitleText.textContent, infoAuthorText.textContent, readStatus)
 }
 
 // These are the items that go into subForm()
@@ -100,6 +108,7 @@ function subForm() {
     subInfo.appendChild(cancelBtn);
 }
 
+// a function to remove the submission form from the screen
 function removeSubForm() {
     subInfo.classList.remove('submit-info');
     subInfo.removeChild(titleInfo);

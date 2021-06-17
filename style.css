@@ -64,9 +64,10 @@ body {
 #submit-form {
     width: 900px;
     margin: auto;
+    transition: all 1s;
 }
 .submit-info {
-    height: 80px;
+    height: 50px;
     width: 900px;
     transition: all 1s;
     background-color: cornsilk;
