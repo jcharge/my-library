@@ -48,7 +48,7 @@ body {
 .book-card {
     height: 50px;
     width: 900px;
-    background-color: red;
+    background-color: green;
     display: flex;
     align-items: center;
 }
@@ -60,19 +60,23 @@ body {
     border-bottom: solid black 1px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 #submit-form {
-    width: 900px;
+    width: 899px;
     margin: auto;
     transition: all 1s;
 }
 .submit-info {
     height: 50px;
-    width: 900px;
+    width: 899px;
     transition: all 1s;
     background-color: cornsilk;
     border-right: solid black 1px;
 }
 .submission-text {
     width: 150px;
+}
+.delete-button {
+    margin-right: 5px;
 }

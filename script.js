@@ -49,6 +49,20 @@ function newCard() {
     infoReadText.textContent += readInfo.textContent;
     bookCard.appendChild(infoRead);
     infoRead.appendChild(infoReadText);
+    // a book card delete button
+    let deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-button');
+    deleteBtn.textContent = 'Remove Book';
+    infoRead.appendChild(deleteBtn);
+    deleteBtn.addEventListener('click', (e) => {
+        for (i = 1; i < libraryContainer.childElementCount; i++) {
+            if (libraryContainer.children[i].contains(e.target)) {
+                libraryContainer.removeChild(libraryContainer.children[i]);
+                myLibrary.splice(i - 1, i - 1)
+            }
+        }
+
+    })
 
     if (infoReadText.textContent == 'Read') {
         readStatus = true
