@@ -49,7 +49,8 @@ function newCard() {
     infoReadText.textContent += readInfo.textContent;
     bookCard.appendChild(infoRead);
     infoRead.appendChild(infoReadText);
-    // a book card delete button
+
+    // a book card delete button that deletes itself on screen and in the myLibrary array
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete-button');
     deleteBtn.textContent = 'Remove Book';
@@ -134,3 +135,14 @@ function removeSubForm() {
     subInfo.removeChild(submissionBtn);
     subInfo.removeChild(cancelBtn);
 }
+// A local save function
+
+let saveBtn = document.querySelector('#local-save-button')
+saveBtn.addEventListener('click', (e) => {
+    localStorage.setItem('MyBookList', JSON.stringify(myLibrary))
+})
+// A clear save button
+let clearBtn = document.querySelector('#clear-all-button');
+clearBtn.addEventListener('click', (e) => {
+    localStorage.clear();
+})
