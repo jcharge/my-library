@@ -1,5 +1,5 @@
 
-const myLibrary = [];
+let myLibrary = [];
 
 function Book() {
 
@@ -58,15 +58,18 @@ function newCard() {
         for (i = 1; i < libraryContainer.childElementCount; i++) {
             if (libraryContainer.children[i].contains(e.target)) {
                 libraryContainer.removeChild(libraryContainer.children[i]);
-                myLibrary.splice(i - 1, i - 1)
+                myLibrary.splice(i - 1, 1)
             }
         }
 
     })
 
-    if (infoReadText.textContent == 'Read') {
+    if (infoReadText.textContent == 'Have you read this book? YES.') {
+        infoReadText.textContent = 'Read';
         readStatus = true
-    } else {readStatus = false}
+    } else {
+        infoReadText.textContent = 'Unread'
+        readStatus = false}
     
     addBookToLibrary(infoTitleText.textContent, infoAuthorText.textContent, readStatus)
 }
@@ -90,13 +93,13 @@ authorInfo.textContent += 'Author';
 authorInfo.classList.add('submission-text');
 
 let readInfo = document.createElement('button');
-readInfo.textContent += 'Read';
+readInfo.textContent += 'Have you read this book? YES.';
 
 readInfo.addEventListener('click', (e) => {
-    if (readInfo.textContent == 'Read') {
-        readInfo.textContent = 'Unread';
+    if (readInfo.textContent == 'Have you read this book? YES.') {
+        readInfo.textContent = 'Have you read this book? NO.';
     } else {
-        readInfo.textContent = 'Read';
+        readInfo.textContent = 'Have you read this book? YES.';
     }
 })
 

@@ -71,11 +71,14 @@ body {
     height: 50px;
     width: 899px;
     transition: all 1s;
-    background-color: cornsilk;
+    background-color: lightblue;
     border-right: solid black 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .submission-text {
-    width: 150px;
+    width: 200px;
 }
 .delete-button {
     margin-right: 5px;
