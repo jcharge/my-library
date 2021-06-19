@@ -143,7 +143,7 @@ function removeSubForm() {
 
 let saveBtn = document.querySelector('#local-save-button')
 saveBtn.addEventListener('click', (e) => {
-    localStorage.setItem('MyBookList', JSON.stringify(myLibrary))
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary))
 })
 // A clear save button
 let clearBtn = document.querySelector('#clear-all-button');
@@ -185,6 +185,20 @@ function myLibraryFunction() {
     } else {infoReadText.textContent += 'Unread'};
     bookCard.appendChild(infoRead);
     infoRead.appendChild(infoReadText);
+
+    let deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-button');
+    deleteBtn.textContent = 'Remove Book';
+    infoRead.appendChild(deleteBtn);
+    deleteBtn.addEventListener('click', (e) => {
+        for (i = 1; i < libraryContainer.childElementCount; i++) {
+            if (libraryContainer.children[i].contains(e.target)) {
+                libraryContainer.removeChild(libraryContainer.children[i]);
+                myLibrary.splice(i - 1, 1)
+            }
+        }
+
+    })
     }
 }
 
