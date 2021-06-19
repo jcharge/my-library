@@ -1,5 +1,9 @@
 
-let myLibrary = [];
+let myLibrary = [
+    {title: 'Of Mice and Men', author: 'John Steinbeck', read: true},
+    {title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', read: true},
+    {title: 'Murder My Tweet (Chet Gecko (2004))', author: 'Bruce Hale', read: true},
+];
 
 function Book() {
 
@@ -146,3 +150,42 @@ let clearBtn = document.querySelector('#clear-all-button');
 clearBtn.addEventListener('click', (e) => {
     localStorage.clear();
 })
+
+// A function that takes the array info and displays it on screen
+// works in tandem with the save button
+function myLibraryFunction() {
+    for (i = 0; i < myLibrary.length; i ++) {
+
+    let bookCard = document.createElement('div');
+    bookCard.classList.add('book-card')
+    libraryContainer.appendChild(bookCard);
+
+    let infoTitle = document.createElement('div');
+    infoTitle.classList.add('card-info');
+    let infoTitleText = document.createElement('p');
+    infoTitleText.classList.add('info-text');
+    infoTitleText.textContent += myLibrary[i].title;
+    bookCard.appendChild(infoTitle);
+    infoTitle.appendChild(infoTitleText);
+
+    let infoAuthor = document.createElement('div');
+    infoAuthor.classList.add('card-info');
+    let infoAuthorText = document.createElement('p');
+    infoAuthorText.classList.add('info-text');
+    infoAuthorText.textContent += myLibrary[i].author;
+    bookCard.appendChild(infoAuthor);
+    infoAuthor.appendChild(infoAuthorText);
+
+    let infoRead = document.createElement('div');
+    infoRead.classList.add('card-info');
+    let infoReadText = document.createElement('p');
+    infoReadText.classList.add('info-text');
+    if (myLibrary[i].read) {
+        infoReadText.textContent += 'Read';
+    } else {infoReadText.textContent += 'Unread'};
+    bookCard.appendChild(infoRead);
+    infoRead.appendChild(infoReadText);
+    }
+}
+
+myLibraryFunction();
