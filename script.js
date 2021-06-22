@@ -1,5 +1,9 @@
 
-let myLibrary = [];
+let myLibrary = [
+    {title: 'Of Mice and Men', author: 'John Steinbeck', read: true},
+    {title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', read: true},
+    {title: 'Murder My Tweet', author: 'Bruce Hale', read: true},
+];
 
 function Book() {
 
@@ -205,5 +209,4 @@ function myLibraryFunction() {
 function save() {
     localStorage.setItem('myBookList', JSON.stringify(myLibrary))
 }
-save();
 myLibraryFunction();
