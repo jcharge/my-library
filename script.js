@@ -1,9 +1,5 @@
 
-let myLibrary = [
-    {title: 'Of Mice and Men', author: 'John Steinbeck', read: true},
-    {title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', read: true},
-    {title: 'Murder My Tweet', author: 'Bruce Hale', read: true},
-];
+let myLibrary = [];
 
 function Book() {
 
