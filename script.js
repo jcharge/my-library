@@ -1,9 +1,5 @@
 
-let myLibrary = [
-    {title: 'Of Mice and Men', author: 'John Steinbeck', read: true},
-    {title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', read: true},
-    {title: 'Murder My Tweet (Chet Gecko (2004))', author: 'Bruce Hale', read: true},
-];
+let myLibrary = [];
 
 function Book() {
 
@@ -143,7 +139,7 @@ function removeSubForm() {
 
 let saveBtn = document.querySelector('#local-save-button')
 saveBtn.addEventListener('click', (e) => {
-    localStorage.setItem('myLibrary', JSON.stringify(myLibrary))
+    save()
 })
 // A clear save button
 let clearBtn = document.querySelector('#clear-all-button');
@@ -153,8 +149,12 @@ clearBtn.addEventListener('click', (e) => {
 
 // A function that takes the array info and displays it on screen
 // works in tandem with the save button
+let bookList = localStorage.getItem('myBookList')
 function myLibraryFunction() {
-    for (i = 0; i < myLibrary.length; i ++) {
+    
+    let libraryBooks = JSON.parse(bookList)
+
+    for (i = 0; i < libraryBooks.length; i ++) {
 
     let bookCard = document.createElement('div');
     bookCard.classList.add('book-card')
@@ -164,7 +164,7 @@ function myLibraryFunction() {
     infoTitle.classList.add('card-info');
     let infoTitleText = document.createElement('p');
     infoTitleText.classList.add('info-text');
-    infoTitleText.textContent += myLibrary[i].title;
+    infoTitleText.textContent += libraryBooks[i].title;
     bookCard.appendChild(infoTitle);
     infoTitle.appendChild(infoTitleText);
 
@@ -172,7 +172,7 @@ function myLibraryFunction() {
     infoAuthor.classList.add('card-info');
     let infoAuthorText = document.createElement('p');
     infoAuthorText.classList.add('info-text');
-    infoAuthorText.textContent += myLibrary[i].author;
+    infoAuthorText.textContent += libraryBooks[i].author;
     bookCard.appendChild(infoAuthor);
     infoAuthor.appendChild(infoAuthorText);
 
@@ -180,7 +180,7 @@ function myLibraryFunction() {
     infoRead.classList.add('card-info');
     let infoReadText = document.createElement('p');
     infoReadText.classList.add('info-text');
-    if (myLibrary[i].read) {
+    if (libraryBooks[i].read) {
         infoReadText.textContent += 'Read';
     } else {infoReadText.textContent += 'Unread'};
     bookCard.appendChild(infoRead);
@@ -194,7 +194,7 @@ function myLibraryFunction() {
         for (i = 1; i < libraryContainer.childElementCount; i++) {
             if (libraryContainer.children[i].contains(e.target)) {
                 libraryContainer.removeChild(libraryContainer.children[i]);
-                myLibrary.splice(i - 1, 1)
+                libraryBooks.splice(i - 1, 1)
             }
         }
 
@@ -202,4 +202,8 @@ function myLibraryFunction() {
     }
 }
 
+function save() {
+    localStorage.setItem('myBookList', JSON.stringify(myLibrary))
+}
+save();
 myLibraryFunction();
