@@ -1,22 +1,35 @@
 body {
     margin: 0px;
-    background-color: purple;
+    background-color: rgb(194, 19, 194);
 }
 #overall-container {
     width: auto;
     height: auto;
 }
 #title-div {
-    height: 50px;
-    width: 900px;
-    background-color: lightgreen;
+    height: 90px;
+    width: 899px;
+    background-color: rgb(102, 216, 102);
     display: flex;
     justify-content: space-between;
     margin: auto;
+    align-items: center;
 }
 #title {
-    width: 200px;
-    margin: 0px 0px 0px 350px;
+    width: 300px;
+    margin: 0px 0px 0px 250px;
+    font-size: 3em;
+}
+.title-button {
+    background-color: rgb(109, 255, 109);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: solid 1px green;
+    
+}
+.title-button:hover {
+    background-color: rgb(6, 190, 6);
 }
 #library-container {
     height: 100%;
@@ -29,32 +42,33 @@ body {
 }
 #organizer-card{
     width: 900px;
-    height: 50px;
+    height: 65px;
     background-color: darkmagenta;
     display: flex;
     align-items: center;
 }
 .org-info {
-    height: 49px;
+    height: 64px;
     width: 300px;
     background-color: rgb(255, 211, 255);
     border-right: solid black 1px;
     border-bottom: solid black 1px;
     display: flex;
     align-items: center;
+    font-size: 1.25em;
 }
 .info-text {
     margin-left: 5px;
 }
 .book-card {
-    height: 50px;
+    height: 65px;
     width: 900px;
     background-color: green;
     display: flex;
     align-items: center;
 }
 .card-info {
-    height: 49px;
+    height: 64px;
     width: 300px;
     background-color: rgb(255, 213, 134);
     border-right: solid black 1px;
@@ -66,13 +80,11 @@ body {
 #submit-form {
     width: 899px;
     margin: auto;
-    transition: all 1s;
 }
 .submit-info {
-    transition: all 1s;
     height: 50px;
     width: 899px;
-    background-color: lightblue;
+    background-color: rgb(255, 211, 255);
     border-right: solid black 1px;
     display: flex;
     align-items: center;
@@ -80,7 +92,25 @@ body {
 }
 .submission-text {
     width: 200px;
+    padding: 0px;
+    margin-right: 75px;  
+}
+.submission-button {
+    background-color: rgb(255, 213, 134);
+    border: solid 1px black;
+    height: 40px;
+    width: 80px;
+}
+.submission-button:hover {
+    background-color: rgb(238, 187, 92);
 }
 .delete-button {
     margin-right: 5px;
+    font-weight: bold;
+    height: 40px;
+    background-color: rgb(255, 211, 255);
+    border: solid 1px purple;
+}
+.delete-button:hover {
+    background-color: rgb(255, 139, 255);
 }

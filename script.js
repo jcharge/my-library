@@ -14,6 +14,7 @@ function addBookToLibrary(title, author, read) {
 let overallContainer = document.querySelector('#overall-container');
 let libraryContainer = document.querySelector('#library-container');
 let addBookBtn = document.querySelector('#add-book-button');
+addBookBtn.classList.add('title-button')
 
 addBookBtn.addEventListener('click', (e) => {
     subForm()
@@ -65,7 +66,7 @@ function newCard() {
 
     })
 
-    if (infoReadText.textContent == 'Have you read this book? YES.') {
+    if (infoReadText.textContent == 'Have Read') {
         infoReadText.textContent = 'Read';
         readStatus = true
     } else {
@@ -79,6 +80,7 @@ function newCard() {
 let subInfo = document.querySelector('#submit-form');
 
 let cancelBtn = document.createElement('button');
+cancelBtn.classList.add('submission-button');
 cancelBtn.textContent += 'Cancel';
 
 cancelBtn.addEventListener('click', (e) => {
@@ -94,17 +96,19 @@ authorInfo.textContent += 'Author';
 authorInfo.classList.add('submission-text');
 
 let readInfo = document.createElement('button');
-readInfo.textContent += 'Have you read this book? YES.';
+readInfo.classList.add('submission-button');
+readInfo.textContent += 'Have Read';
 
 readInfo.addEventListener('click', (e) => {
-    if (readInfo.textContent == 'Have you read this book? YES.') {
-        readInfo.textContent = 'Have you read this book? NO.';
+    if (readInfo.textContent == 'Have Read') {
+        readInfo.textContent = 'Have NOT Read';
     } else {
-        readInfo.textContent = 'Have you read this book? YES.';
+        readInfo.textContent = 'Have Read';
     }
 })
 
 let submissionBtn = document.createElement('button');
+submissionBtn.classList.add('submission-button');
 submissionBtn.textContent += 'Submit';
 
 submissionBtn.addEventListener('click', (e) => {
@@ -138,11 +142,13 @@ function removeSubForm() {
 // A local save function
 
 let saveBtn = document.querySelector('#local-save-button')
+saveBtn.classList.add('title-button')
 saveBtn.addEventListener('click', (e) => {
     save()
 })
 // A clear save button
 let clearBtn = document.querySelector('#clear-all-button');
+clearBtn.classList.add('title-button')
 clearBtn.addEventListener('click', (e) => {
     localStorage.clear();
 })
